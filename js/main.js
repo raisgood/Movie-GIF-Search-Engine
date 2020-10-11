@@ -11,17 +11,19 @@ From the technical side:
 -display data accordingly
 */
 
-$(document).ready(()=>{
+$(document).ready(function(){
   
-  $("#submit").click(()=>{
-    let userInput = $("#search").val()
-    // alert(userInput)
+  $("#submit").click(function(){
+    let userInput = $("#search")
   alert(userInput)
-     $.ajax({ url:'https://www.omdbapi.com/?apikey=387cdace=${'userInput'})
+     $.ajax({ url:"http://www.omdbapi.com/?i=tt3896198&apikey=387cdace"})
     .done((res)=>{
       let movies = res.Search;
       $.each(movies, (i, e)=>{   
- let poster = e.Poster       console.log("poster", poster)
+ let poster = e.Poster       
+ console.log("poster", poster)
  $("body").append('<img src="${poster}" alt="movie poster"/>')
-})                           })
-     })
+});                           
+});
+});
+});
